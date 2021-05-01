@@ -27,7 +27,7 @@
 
   - name: Download "App" from git
     git:
-      repo: https://github.com/Eduardgur/WeightTrackerTst.git
+      repo: git@github.com:Eduardgur/WeightTrackerTst.git
       dest: "/home/eduardgu/WeightTrackerTst"
 
   - name: Install node packages
