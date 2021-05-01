@@ -7,10 +7,10 @@
         name: git
         state: latest
 
-    - name: update nodejs-npm deb
+    - name: update nodejs deb
       ansible.builtin.shell: curl -fsSL https://deb.nodesource.com/setup_16.x | sudo -E bash -
 
-    - name: install nodejs-npm
+    - name: install nodejs
       apt:
         name: nodejs
         state: present
