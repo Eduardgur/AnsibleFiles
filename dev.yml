@@ -2,43 +2,43 @@
 - hosts: dev
   become: yes
   tasks:
-    - name: install git
+    - name: Install "Git"
       apt:
         name: git
         state: latest
 
-    - name: update nodejs deb
+    - name: Update "NodeJS" deb
       ansible.builtin.shell: curl -fsSL https://deb.nodesource.com/setup_16.x | sudo -E bash -
 
-    - name: install nodejs
+    - name: Install "NodeJS"
       apt:
         name: nodejs
         state: present
 
-    - name: install pm2
+    - name: Install "pm2"
       shell: npm install pm2 -g
 
-    - name: Download app from git
+    - name: Download "App" from git
       ansible.builtin.git:
         repo: https://github.com/Eduardgur/WeightTrackerTst.git
         dest: "~/WeightTrackerTst"
 
-    - name: install node dependecies
-      shell: npm install
+    - name: Install node packages
+      ansible.builtin.shell: npm install
       args:
         chdir: "~/WeightTrackerTst"
 
-    - name: initialize db
-      shell: npm run initdb
+    - name: Initialize DB
+      ansible.builtin.shell: npm run initdb
       args:
         chdir: "~/WeightTrackerTst"
 
     - name: clear process
-      shell: pm2 delete all
+      ansible.builtin.shell: pm2 delete all
       ignore_errors: yes
 
     - name: run application
-      shell: pm2 start npm -- run dev && pm2 save && pm2 startup
+      ansible.builtin.shell: pm2 start npm -- run dev && pm2 save && pm2 startup
       args:
         chdir: "~/WeightTrackerTst"
 
