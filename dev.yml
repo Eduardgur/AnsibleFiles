@@ -23,7 +23,7 @@
       state: latest
 
   - name: Install "pm2"
-    npm: install pm2 -g
+    shell: npm install pm2 -g
 
   - name: Download "App" from git
     git:
