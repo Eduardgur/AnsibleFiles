@@ -1,6 +1,5 @@
 ---
-- name: dev
-  hosts: dev
+- hosts: dev
   become: yes
   tasks:
     - name: install git
