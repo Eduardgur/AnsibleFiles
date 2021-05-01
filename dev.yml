@@ -25,10 +25,16 @@
   - name: Install "pm2"
     shell: npm install pm2 -g
 
+  - name: Create a directory if it does not exist
+    file: 
+      path: "/home/eduardgu/weighttrackertst"
+      state: directory
+      mode: '0755'
+
   - name: Download "App" from git
     git:
       repo: git@github.com:Eduardgur/WeightTrackerTst.git
-      dest: "/home/eduardgu/WeightTrackerTst"
+      dest: "/home/eduardgu/weighttrackertst"
 
   - name: Install node packages
     shell: npm install
