@@ -7,10 +7,10 @@
   - name: Get user name
     become: false
     shell: whoami
-    register:  current_user
+    register: current_user
 
   - debug:
-    msg: "System {{ current_user }}" 
+    msg: {{ current_user }}
 
   - name: Install "Git"
     apt:
