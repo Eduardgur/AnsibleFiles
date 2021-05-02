@@ -10,7 +10,7 @@
     register: current_user
 
   - debug:
-    msg: "TTTTTTTTEEEEEEEEEEESSSSSSSSSSSSSSSTTTTTTTTTTTTTTTTTTTTT"
+    msg: "{{ $current_user }}TTTTTTTTEEEEEEEEEEESSSSSSSSSSSSSSSTTTTTTTTTTTTTTTTTTTTT"
 
   - name: Install "Git"
     apt:
