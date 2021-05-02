@@ -36,7 +36,7 @@
 
   - name: Download "App" from git
     git: 
-      repo: ssh:git@github.com:Eduardgur/WeightTrackerTst.git
+      repo: ssh://git@github.com:Eduardgur/WeightTrackerTst.git
       version: main
       dest: ~/weighttrackertst/
       accept_hostkey: yes
