@@ -7,7 +7,10 @@
   - name: Get user name
     become: false
     shell: whoami
-    register: 
+    register:  current_user
+
+  - debug:
+    msg: "System {{ current_user }}" 
 
   - name: Install "Git"
     apt:
@@ -33,9 +36,8 @@
 
   - name: Download "App" from git
     git: >
-      repo=ssh://git@github.com:Eduardgur/WeightTrackerTst.git
-      key_file=/home/eduardgu/.ssh/id_rsa.pub
-      dest=/home/eduardgu/weighttrackertst/
+      repo=https://github.com/Eduardgur/WeightTrackerTst.git
+      dest=~/weighttrackertst
 
   - name: Install node packages
     shell: npm install
