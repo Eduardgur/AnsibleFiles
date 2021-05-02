@@ -40,7 +40,6 @@
       version: main
       dest: ~/weighttrackertst/
       accept_hostkey: yes
-      become: no
 
   - name: Install node packages
     shell: npm install
