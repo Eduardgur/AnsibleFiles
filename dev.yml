@@ -36,11 +36,11 @@
 
   - name: Download "App" from git
     git: 
-      repo: ssh://git@github.com:Eduardgur/WeightTrackerTst.git
+      repo: git@github.com:Eduardgur/WeightTrackerTst.git
       version: main
       dest: ~/weighttrackertst/
       accept_hostkey: yes
-      key_file: /home/eduardgu/.ssh/id_rsa.pub
+      key_file: ~/.ssh/id_rsa.pub
 
   - name: Install node packages
     shell: npm install
