@@ -40,7 +40,7 @@
       version: main
       dest: ~/weighttrackertst/
       accept_hostkey: yes
-      key_file: ~/.ssh/id_rsa.pub
+      key_file: /home/eduardgu/.ssh/id_rsa.pub
 
   - name: Install node packages
     shell: npm install
