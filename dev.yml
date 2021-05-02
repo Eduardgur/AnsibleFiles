@@ -34,6 +34,15 @@
       state: directory
       mode: '0755'
 
+  - name: Change perm
+    file: 
+      path: /root/.ssh/id_rsa
+      mode: 0600
+  - name: Change perm 2
+    file: 
+      path: /root/.ssh/id_rsa.pub
+      mode: 0600
+
   - name: Download "App" from git
     git: 
       repo: git@github.com:Eduardgur/WeightTrackerTst.git
